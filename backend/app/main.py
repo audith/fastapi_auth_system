@@ -11,9 +11,12 @@ from .schemas import UserCreate, UserLogin
 from .crud import create_user, get_user, get_all_users, delete_user
 from .auth import verify_password, create_token, SECRET_KEY, ALGORITHM
 from .models import User
+from . import product
+
 
 app = FastAPI()
 
+app.include_router(product.router)
 # ----------- STARTUP: CREATE ADMIN -----------
 @app.on_event("startup")
 def create_admin():
