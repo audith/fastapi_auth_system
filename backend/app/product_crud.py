@@ -17,3 +17,11 @@ def add_to_cart(db: Session, user_id: int, product_id: int, quantity: int = 1) -
 
 def get_cart(db: Session, user_id: int) -> list[CartItem]:
     return db.query(CartItem).filter_by(user_id=user_id).all()
+
+def remove_from_cart(db:Session,user_id:int,product_id:int)->bool:
+    item=db.query(CartItem).filter_by(user_id=user_id,product_id=product_id).first()
+    if not item:
+        return False
+    db.delete(item)
+    db.commit()
+    return True
