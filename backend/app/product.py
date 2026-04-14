@@ -42,4 +42,4 @@ def remove_from_cart(
     success = product_crud.remove_from_cart(db, user.id, product_id)
     if not success:
         raise HTTPException(status_code=404, detail="Item not in cart")
-    return {"message": "Removed from cart"}
+    return {"message": "Removed  product from cart"}
