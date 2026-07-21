@@ -1,4 +1,4 @@
-# 🍓 FastAPI Auth System
+# 🍓 Fruit Shop
 
 A full-stack authentication system built with **FastAPI**, **PostgreSQL**, and **React**. The project includes JWT authentication, user registration/login, role-based access, and a simple Fruit Shop application.
 
