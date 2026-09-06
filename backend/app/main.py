@@ -43,6 +43,10 @@ app.add_middleware(
 
 app.include_router(product_router)
 
+@app.get("/")
+def read_root():
+    return {"message": "everything is working fine"}
+
 @app.post("/register", tags=["Auth"])
 def register(user: UserCreate, db: Session = Depends(get_db)):
     if get_user(db, user.email):
